@@ -1,0 +1,11 @@
+{
+  "name": "resume_builder",
+  "version": "1.0.0",
+  "description": "AI-powered ATS-friendly resume generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "portable": "bash scripts/create-portable.sh"
+  }
+}

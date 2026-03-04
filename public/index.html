@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Resume Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>AI Resume Builder</h1>
+    <p>Create a professional, ATS-friendly resume in minutes.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel form-panel">
+      <h2>Candidate Information</h2>
+      <form id="resumeForm">
+        <label>Name
+          <input type="text" name="name" required placeholder="Alex Johnson" />
+        </label>
+
+        <label>Profile
+          <textarea name="profile" rows="3" required placeholder="2-3 line professional summary"></textarea>
+        </label>
+
+        <label>Contact
+          <textarea name="contact" rows="2" required placeholder="Email | Phone | LinkedIn | Location"></textarea>
+        </label>
+
+        <label>Skills (comma-separated)
+          <input type="text" name="skills" required placeholder="Python, SQL, Project Management" />
+        </label>
+
+        <div id="educationContainer">
+          <h3>Education</h3>
+          <div class="group education-item">
+            <input type="text" name="educationDegree" placeholder="Degree" required />
+            <input type="text" name="educationInstitution" placeholder="Institution" required />
+            <input type="text" name="educationDates" placeholder="Dates" />
+          </div>
+        </div>
+        <button type="button" id="addEducation">+ Add Education</button>
+
+        <div id="experienceContainer">
+          <h3>Experience</h3>
+          <div class="group experience-item">
+            <input type="text" name="experienceRole" placeholder="Role" required />
+            <input type="text" name="experienceCompany" placeholder="Company" required />
+            <input type="text" name="experienceDates" placeholder="Dates" />
+            <textarea name="experienceDescription" rows="3" placeholder="Describe your impact"></textarea>
+          </div>
+        </div>
+        <button type="button" id="addExperience">+ Add Experience</button>
+
+        <button type="submit" class="primary">Generate Resume</button>
+      </form>
+    </section>
+
+    <section class="panel preview-panel">
+      <div class="preview-actions">
+        <h2>Generated Resume</h2>
+        <button id="downloadPdf" disabled>Download PDF</button>
+      </div>
+      <article id="resumePreview" class="resume">
+        <p class="placeholder">Your AI-generated resume will appear here.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
